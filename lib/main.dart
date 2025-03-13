@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:shopywell/screens/get_started_page.dart';
-import 'package:shopywell/screens/onboading/choose_page_indicator.dart';
-import 'package:shopywell/screens/onboading/create_an_account_page.dart';
-import 'package:shopywell/screens/onboading/forgott_password.dart';
-import 'package:shopywell/screens/onboading/sign_in_page.dart';
-import 'package:shopywell/screens/onboading/splash_screen.dart';
+import 'package:device_preview/device_preview.dart';
+import 'package:shopywell/screens/bottom_nav_screen.dart';
+import 'package:shopywell/screens/home_page.dart';
 
+import 'package:shopywell/screens/onboading/splash_screen.dart';
+import 'package:shopywell/screens/profile_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    DevicePreview(
+      enabled: true,
+      builder: (context) => const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +26,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:  SplashScreen(),
+      debugShowCheckedModeBanner: false,
+
+      builder: DevicePreview.appBuilder,
+      home: SplashScreen(),
     );
   }
 }
-
-

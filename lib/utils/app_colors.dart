@@ -9,6 +9,7 @@ class AppColors {
   static const Color black= CupertinoColors.black;
   static const Color black_light= Colors.black45;
   static const Color grey=Color(0xFFA8A8A9);
+  static const Color pink=Color(0xFFFA7189);
   static const Color grey_light=Color(0xFF626262);
   static const Color transparent=Colors.transparent;
   static const Color green=Colors.green;

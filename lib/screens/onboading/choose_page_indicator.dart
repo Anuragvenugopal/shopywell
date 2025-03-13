@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopywell/screens/get_started_page.dart';
 
 import 'package:shopywell/screens/onboading/sign_in_page.dart';
 import 'package:shopywell/utils/app_colors.dart';
@@ -47,7 +48,7 @@ class _ChoosePageIndicatorPageState extends State<ChoosePageIndicator> {
                     onPressed: () {
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(builder: (context) => GetYourOrderPage()),
+                        MaterialPageRoute(builder: (context) => GetStartedPage()),
                       );
                     },
                     child: BuildTextWidget(text: "Skip", color: AppColors.black),

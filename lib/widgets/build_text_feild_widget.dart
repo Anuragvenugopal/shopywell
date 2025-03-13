@@ -2,19 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:shopywell/utils/app_colors.dart';
 
 class BuildTextFeildWidget extends StatefulWidget {
-  final TextEditingController controller;
-  final String hintText;
+  final TextEditingController? controller;
+  final String? hintText;
   final IconData? prefixIcon;
   final Widget? suffixIcon;
   final bool obscureText;
+  final Color? fillColor;
 
   const BuildTextFeildWidget({
     super.key,
-    required this.controller,
-    required this.hintText,
+    this.controller,
+     this.hintText,
     this.prefixIcon,
     this.suffixIcon,
     this.obscureText = false,
+    this.fillColor,
   });
 
   @override
@@ -33,13 +35,14 @@ class _BuildTextFieldWidgetState extends State<BuildTextFeildWidget> {
       child: TextField(
         controller: widget.controller,
         obscureText: widget.obscureText,
+        style: TextStyle(color: AppColors.black,fontWeight: FontWeight.w400),
         decoration: InputDecoration(
           hintText: widget.hintText,
-          hintStyle: TextStyle(fontSize: screenWidth * 0.04),
+          hintStyle: TextStyle(fontSize: screenWidth * 0.04,),
           filled: true,
-          fillColor: Colors.grey[200],
+          fillColor: widget.fillColor ?? Colors.grey[200],
           prefixIcon: widget.prefixIcon != null
-              ? Icon(widget.prefixIcon, color:AppColors.grey_light, size: screenWidth * 0.06)
+              ? Icon(widget.prefixIcon, color: AppColors.grey_light, size: screenWidth * 0.06)
               : null,
           suffixIcon: widget.suffixIcon,
           border: OutlineInputBorder(

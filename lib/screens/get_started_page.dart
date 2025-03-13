@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopywell/screens/home_page.dart';
 import 'package:shopywell/utils/app_colors.dart';
 import 'package:shopywell/widgets/build_elivated_button_widget.dart';
 import 'package:shopywell/widgets/build_text_widget.dart';
@@ -68,7 +69,9 @@ class _GetStartedPageState extends State<GetStartedPage> {
                 SizedBox(height: 30),
                 BuildElivatedButtonWidget(
                   text: 'Get Started',
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage(),));
+                  },
                   textSize: 20,
                   width: screenWidth / 1.3,
                   height: 60,
